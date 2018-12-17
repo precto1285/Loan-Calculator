@@ -13,8 +13,10 @@ document.getElementById('loan-form').addEventListener('submit', function (e) {
 
 // Calculate Results
 function calculateResults() {
-  console.log('Calculating...');
-  // UI Vars
+
+  // console.log('calculating...')
+
+  //UI Variables
   const amount = document.getElementById('amount');
   const interest = document.getElementById('interest');
   const years = document.getElementById('years');
@@ -24,11 +26,18 @@ function calculateResults() {
 
   const principal = parseFloat(amount.value);
   const calculatedInterest = parseFloat(interest.value) / 100 / 12;
-  const calculatedPayments = parseFloat(years.value) * 12;
+  const calculatedPayments = parseFloat(years.value) * 12
+
+  // console.log(principal);
+  // console.log(calculatedInterest);
+  // console.log(calculatedPayments);
 
   // Compute monthly payment
   const x = Math.pow(1 + calculatedInterest, calculatedPayments);
-  const monthly = (principal * x * calculatedInterest) / (x - 1);
+  const monthly = (principal * x * calculatedInterest) / (x - 1)
+
+  // console.log(x);
+  // console.log(monthly);
 
   if (isFinite(monthly)) {
     monthlyPayment.value = monthly.toFixed(2);
@@ -42,13 +51,15 @@ function calculateResults() {
     document.getElementById('loading').style.display = 'none';
 
   } else {
-    showError('Please check your numbers');
+    showError('Please check you numbers');
+    // console.log('Please check your numbers');
   }
 }
 
-// Show Error
+// Show Error Function
 function showError(error) {
-  // Hide results
+
+  // Show results
   document.getElementById('results').style.display = 'none';
 
   // Hide loader
@@ -64,13 +75,13 @@ function showError(error) {
   // Add class
   errorDiv.className = 'alert alert-danger';
 
-  // Create text node and append to div
+  // Creat text node and append to div
   errorDiv.appendChild(document.createTextNode(error));
 
-  // Insert error above heading
+  // Insert Error above heading
   card.insertBefore(errorDiv, heading);
 
-  // Clear error after 3 seconds
+  //Clear error after 3 seconds
   setTimeout(clearError, 3000);
 }
 
