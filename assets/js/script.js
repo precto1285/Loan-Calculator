@@ -25,7 +25,7 @@ function calculateResults() {
   const totalInterest = document.getElementById('total-interest');
 
   const principal = parseFloat(amount.value);
-  const calculatedInterest = parseFloat(interest.value) / 100 / 12;
+  const calculatedInterest = (parseFloat(interest.value) / 100 / 12);
   const calculatedPayments = parseFloat(years.value) * 12
 
   // console.log(principal);
@@ -46,7 +46,6 @@ function calculateResults() {
 
     // Show results
     document.getElementById('results').style.display = 'block';
-
     // Hide loader
     document.getElementById('loading').style.display = 'none';
 
@@ -61,26 +60,19 @@ function showError(error) {
 
   // Show results
   document.getElementById('results').style.display = 'none';
-
   // Hide loader
   document.getElementById('loading').style.display = 'none';
-
   // Create a div
   const errorDiv = document.createElement('div');
-
   // Get elements
   const card = document.querySelector('.card');
   const heading = document.querySelector('.heading');
-
   // Add class
   errorDiv.className = 'alert alert-danger';
-
   // Creat text node and append to div
   errorDiv.appendChild(document.createTextNode(error));
-
   // Insert Error above heading
   card.insertBefore(errorDiv, heading);
-
   //Clear error after 3 seconds
   setTimeout(clearError, 3000);
 }
