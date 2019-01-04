@@ -1,5 +1,4 @@
 # Loan-Calculator
-##Loan Calculator
 A simple web application to calculate a ‘monthly payment’, ‘total payment’ and ‘total interest’ based on user input of the ‘loan amount’, ‘interest’, and ‘years to repay’.
 
 ## Getting Started
