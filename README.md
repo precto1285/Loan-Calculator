@@ -4,6 +4,8 @@ A simple web application to calculate a ‘monthly payment’, ‘total payment�
 ## Getting Started
 To use the Loan Calculator, simply deploy by posting this webpage on your browser:
 https://precto1285.github.io/Loan-Calculator/
+
+enter your loan amount, interest rate, and number of years and the loan calculator will display your monthly payment, total payment, and total interest.
  
 ## Built With
 •	HTML5
